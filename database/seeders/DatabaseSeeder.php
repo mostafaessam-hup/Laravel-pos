@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Laratrust\Laratrust;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,6 +25,8 @@ class DatabaseSeeder extends Seeder
             LanguageSeeder::class,
             TypeSeeder::class,
             AdminSeeder::class,
+            LaratrustSeeder::class,
+            UsersTableSeeder::class,
         ]);
     }
 }
