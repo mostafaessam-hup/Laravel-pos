@@ -22,20 +22,23 @@
                     </div>
                 </td>
                 <td>
-                    @if ($record->verifications->email_status_id == \App\Enums\UserVerificationStatus::VERIFIED->value)
+                    @if ($record->verifications && $record->verifications->email_status_id == \App\Enums\UserVerificationStatus::VERIFIED->value)
                         <div class="badge badge-light-success">
                             {{ __('admin.verified') }}
                         </div>
-                    @elseif ($record->verifications->email_status_id == \App\Enums\UserVerificationStatus::REJECTED->value)
+                    @elseif ($record->verifications && $record->verifications->email_status_id == \App\Enums\UserVerificationStatus::REJECTED->value)
                         <div class="badge badge-light-danger">
                             {{ __('admin.rejected') }}
                         </div>
-                    @elseif ($record->verifications->email_status_id == \App\Enums\UserVerificationStatus::UNVERIFIED->value)
+                    @elseif ($record->verifications && $record->verifications->email_status_id == \App\Enums\UserVerificationStatus::UNVERIFIED->value)
                         <div class="badge badge-light-danger">
                             {{ __('admin.unverified') }}
                         </div>
                     @else
-                        <a href="{{ route('admin.users.verify', ['user_id' => $record->id, 'action' => 'email_status_id']) }}"
+                    <div class="badge badge-light-danger">
+                        {{ __('admin.undifined') }}
+                    </div>
+                        {{-- <a href="{{ route('admin.users.verify', ['user_id' => $record->id, 'action' => 'email_status_id']) }}"
                             class="btn btn-success">
                             <i class="fas fa-check"></i><span class="path1"></span><span class="path2"></span><span
                                 class="path3"></span><span class="path4"></span></i>
@@ -44,7 +47,7 @@
                             class="btn btn-danger">
                             <i class="fas fa-times"></i><span class="path1"></span><span class="path2"></span><span
                                 class="path3"></span><span class="path4"></span></i>
-                        </a>
+                        </a> --}}
                     @endif
                 </td>
             </tr>
@@ -61,20 +64,23 @@
                     </div>
                 </td>
                 <td>
-                    @if ($record->verifications->phone_status_id == \App\Enums\UserVerificationStatus::VERIFIED->value)
+                    @if ($record->verifications && $record->verifications->phone_status_id == \App\Enums\UserVerificationStatus::VERIFIED->value)
                         <div class="badge badge-light-success">
                             {{ __('admin.verified') }}
                         </div>
-                    @elseif ($record->verifications->phone_status_id == \App\Enums\UserVerificationStatus::REJECTED->value)
+                    @elseif ($record->verifications && $record->verifications->phone_status_id == \App\Enums\UserVerificationStatus::REJECTED->value)
                         <div class="badge badge-light-danger">
                             {{ __('admin.rejected') }}
                         </div>
-                    @elseif ($record->verifications->phone_status_id == \App\Enums\UserVerificationStatus::UNVERIFIED->value)
+                    @elseif ($record->verifications && $record->verifications->phone_status_id == \App\Enums\UserVerificationStatus::UNVERIFIED->value)
                         <div class="badge badge-light-danger">
                             {{ __('admin.unverified') }}
                         </div>
                     @else
-                        <a href="{{ route('admin.users.verify', ['user_id' => $record->id, 'action' => 'phone_status_id']) }}"
+                    <div class="badge badge-light-danger">
+                        {{ __('admin.undifined') }}
+                    </div>
+                        {{-- <a href="{{ route('admin.users.verify', ['user_id' => $record->id, 'action' => 'phone_status_id']) }}"
                             class="btn btn-success">
                             <i class="fas fa-check"></i><span class="path1"></span><span class="path2"></span><span
                                 class="path3"></span><span class="path4"></span></i>
@@ -83,47 +89,50 @@
                             class="btn btn-danger">
                             <i class="fas fa-times"></i><span class="path1"></span><span class="path2"></span><span
                                 class="path3"></span><span class="path4"></span></i>
-                        </a>
+                        </a> --}}
                     @endif
                 </td>
             </tr>
             <tr>
                 <td>{{ __('admin.national_id_card') }}</td>
                 <td>
-                    <div class="symbol symbol-200px overflow-hidden me-3">
+                    {{-- <div class="symbol symbol-200px overflow-hidden me-3">
                         <div class="symbol-label">
                             <a href="{{ $record->verifications->national_id_card_front_image_url }}" target="_blank">
                                 <img src="{{ $record->verifications->national_id_card_front_image_url }}"
                                     alt="{{ $record->full_name }}" class="w-100">
                             </a>
                         </div>
-                    </div>
+                    </div> --}}
                 </td>
                 <td>
                     <div class="symbol symbol-200px overflow-hidden me-3">
-                        <div class="symbol-label">
+                        {{-- <div class="symbol-label">
                             <a href="{{ $record->verifications->national_id_card_back_image_url }}" target="_blank">
                                 <img src="{{ $record->verifications->national_id_card_back_image_url }}"
                                     alt="{{ $record->full_name }}" class="w-100">
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
                 </td>
                 <td>
-                    @if ($record->verifications->national_id_card_status_id == \App\Enums\UserVerificationStatus::VERIFIED->value)
+                    @if ($record->verifications && $record->verifications->national_id_card_status_id == \App\Enums\UserVerificationStatus::VERIFIED->value)
                         <div class="badge badge-light-success">
                             {{ __('admin.verified') }}
                         </div>
-                    @elseif ($record->verifications->national_id_card_status_id == \App\Enums\UserVerificationStatus::REJECTED->value)
+                    @elseif ($record->verifications && $record->verifications->national_id_card_status_id == \App\Enums\UserVerificationStatus::REJECTED->value)
                         <div class="badge badge-light-danger">
                             {{ __('admin.rejected') }}
                         </div>
-                    @elseif ($record->verifications->national_id_card_status_id == \App\Enums\UserVerificationStatus::UNVERIFIED->value)
+                    @elseif ($record->verifications && $record->verifications->national_id_card_status_id == \App\Enums\UserVerificationStatus::UNVERIFIED->value)
                         <div class="badge badge-light-danger">
                             {{ __('admin.unverified') }}
                         </div>
                     @else
-                        <a href="{{ route('admin.users.verify', ['user_id' => $record->id, 'action' => 'national_id_card_status_id']) }}"
+                    <div class="badge badge-light-danger">
+                        {{ __('admin.undifined') }}
+                    </div>
+                        {{-- <a href="{{ route('admin.users.verify', ['user_id' => $record->id, 'action' => 'national_id_card_status_id']) }}"
                             class="btn btn-success">
                             <i class="fas fa-check"></i><span class="path1"></span><span class="path2"></span><span
                                 class="path3"></span><span class="path4"></span></i>
@@ -132,7 +141,7 @@
                             class="btn btn-danger">
                             <i class="fas fa-times"></i><span class="path1"></span><span class="path2"></span><span
                                 class="path3"></span><span class="path4"></span></i>
-                        </a>
+                        </a> --}}
                     @endif
                 </td>
             </tr>
@@ -141,39 +150,42 @@
 
                 <td>
                     <div class="symbol symbol-200px overflow-hidden me-3">
-                        <div class="symbol-label">
+                        {{-- <div class="symbol-label">
                             <a href="{{ $record->verifications->driving_license_front_image_url }}" target="_blank">
                                 <img src="{{ $record->verifications->driving_license_front_image_url }}"
                                     alt="{{ $record->full_name }}" class="w-100">
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
                 </td>
                 <td>
                     <div class="symbol symbol-200px overflow-hidden me-3">
-                        <div class="symbol-label">
+                        {{-- <div class="symbol-label">
                             <a href="{{ $record->verifications->driving_license_back_image_url }}" target="_blank">
                                 <img src="{{ $record->verifications->driving_license_back_image_url }}"
                                     alt="{{ $record->full_name }}" class="w-100">
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
                 </td>
                 <td>
-                    @if ($record->verifications->driving_license_status_id == \App\Enums\UserVerificationStatus::VERIFIED->value)
+                    @if ($record->verifications && $record->verifications->driving_license_status_id == \App\Enums\UserVerificationStatus::VERIFIED->value)
                         <div class="badge badge-light-success">
                             {{ __('admin.verified') }}
                         </div>
-                    @elseif ($record->verifications->driving_license_status_id == \App\Enums\UserVerificationStatus::REJECTED->value)
+                    @elseif ($record->verifications && $record->verifications->driving_license_status_id == \App\Enums\UserVerificationStatus::REJECTED->value)
                         <div class="badge badge-light-danger">
                             {{ __('admin.rejected') }}
                         </div>
-                    @elseif ($record->verifications->driving_license_status_id == \App\Enums\UserVerificationStatus::UNVERIFIED->value)
+                    @elseif ($record->verifications && $record->verifications->driving_license_status_id == \App\Enums\UserVerificationStatus::UNVERIFIED->value)
                         <div class="badge badge-light-danger">
                             {{ __('admin.unverified') }}
                         </div>
                     @else
-                        <a href="{{ route('admin.users.verify', ['user_id' => $record->id, 'action' => 'driving_license_status_id']) }}"
+                    <div class="badge badge-light-danger">
+                        {{ __('admin.undifined') }}
+                    </div>
+                        {{-- <a href="{{ route('admin.users.verify', ['user_id' => $record->id, 'action' => 'driving_license_status_id']) }}"
                             class="btn btn-success">
                             <i class="fas fa-check"></i><span class="path1"></span><span class="path2"></span><span
                                 class="path3"></span><span class="path4"></span></i>
@@ -182,7 +194,7 @@
                             class="btn btn-danger">
                             <i class="fas fa-times"></i><span class="path1"></span><span class="path2"></span><span
                                 class="path3"></span><span class="path4"></span></i>
-                        </a>
+                        </a> --}}
                     @endif
                 </td>
             </tr>

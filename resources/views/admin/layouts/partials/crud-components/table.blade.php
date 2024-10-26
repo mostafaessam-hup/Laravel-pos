@@ -8,7 +8,7 @@
                 <div class="card-body pt-0">
                     <div id="kt_customers_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                         <div class="table-responsive">
-                            <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer"
+                            <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer table-hover"
                                 id="kt_customers_table">
                                 <thead>
                                     <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">

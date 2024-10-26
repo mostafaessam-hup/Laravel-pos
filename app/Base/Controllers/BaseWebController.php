@@ -118,4 +118,14 @@ abstract class BaseWebController
         }
         return response()->json(['status' => 0, 'message' => __('admin.delete_is_not_allowed'), 'id' => $id]);
     }
+
+    public function toggleBoolean($id, $action)
+    {
+        $record = $this->model->findOrFail($id);
+        if (toggleBoolean($record, $action))
+            return response()->json(['status' => 'success']);
+
+        return response()->json(['status' => 'fail']);
+    }
 }
+
