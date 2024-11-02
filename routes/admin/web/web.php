@@ -11,5 +11,7 @@ Route::get('home', 'HomeController@index')->name('home.index');
 Route::resource('admins', 'AdminController');
 
 Route::resource('users', 'UserController');
-Route::get('user/toggle-boolean/{id}/{action}', 'User\UserController@toggleBoolean')->name('users.toggleBoolean.active');
+Route::get('user/toggle-boolean/{id}/{action}', 'UserController@toggleBoolean')->name('users.toggleBoolean.active');
+Route::resource('roles', 'Role\RoleController');
+
 
